@@ -48,6 +48,8 @@
     "moonbase:export": "hardhat --network moonbase export --export exports/moonbase.json",
     "arbitrum:deploy": "hardhat --network arbitrum deploy",
     "arbitrum:export": "hardhat --network arbitrum export --export exports/arbitrum.json",
+    "smartbch:deploy": "hardhat --network smartbch deploy",
+    "smartbch:export": "hardhat --network smartbch export --export exports/smartbch.json",
     "export": "hardhat export --export-all exports/deployments.json",
     "test": "hardhat test --verbose",
     "test:coverage": "cross-env NODE_OPTIONS=\"--max-old-space-size=2048\" hardhat coverage",

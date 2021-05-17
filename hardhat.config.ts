@@ -18,10 +18,12 @@ import "./tasks"
 import { HardhatUserConfig } from "hardhat/types"
 import { removeConsoleLog } from "hardhat-preprocessor"
 
-const accounts = {
-  mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
-  // accountsBalance: "990000000000000000000",
-}
+// const accounts = {
+//   mnemonic: process.env.MNEMONIC || "test test test test test test test test test test test junk",
+//   // accountsBalance: "990000000000000000000",
+// }
+
+const accounts = [`${process.env.DEPLOYER_PRIVATE_KEY}`, `${process.env.DEV_PRIVATE_KEY}`]
 
 const config: HardhatUserConfig = {
   abiExporter: {
@@ -251,6 +253,15 @@ const config: HardhatUserConfig = {
       url: "https://exchaintestrpc.okex.org",
       accounts,
       chainId: 65,
+      live: true,
+      saveDeployments: true,
+      tags: ["staging"],
+      gasMultiplier: 2,
+    },
+    "smartbch-testnet": {
+      url: "http://52.22.211.124:8545",
+      accounts,
+      chainId: 10001,
       live: true,
       saveDeployments: true,
       tags: ["staging"],
